@@ -1,0 +1,55 @@
+
+-----
+Test: test/test_buy_product.py::Test1::test_buy_product (call)
+Start time: 2022-11-28 22:27:43.148311
+Start name method: select_category
+
+End time: 2022-11-28 22:27:46.223054
+End name method: select_category
+URL: https://www.dns-shop.ru/catalog/17a8a26516404e77/kabeli-dlya-mobilnyx-ustrojstv/
+
+-----
+
+-----
+Test: test/test_buy_product.py::Test1::test_buy_product (call)
+Start time: 2022-11-28 22:27:46.224051
+Start name method: selected_product
+
+End time: 2022-11-28 22:27:51.909021
+End name method: selected_product
+URL: https://www.dns-shop.ru/product/db81c058b4d13330/kabel-kruglyj-dexp-lightning-8-pin---usb-belyj-1-m/
+
+-----
+
+-----
+Test: test/test_buy_product.py::Test1::test_buy_product (call)
+Start time: 2022-11-28 22:27:51.910017
+Start name method: buy_product
+
+End time: 2022-11-28 22:27:56.366369
+End name method: buy_product
+URL: https://www.dns-shop.ru/cart/
+
+-----
+
+-----
+Test: test/test_buy_product.py::Test1::test_buy_product (call)
+Start time: 2022-11-28 22:27:56.367367
+Start name method: checkout
+
+End time: 2022-11-28 22:27:56.460120
+End name method: checkout
+URL: https://www.dns-shop.ru/cart/
+
+-----
+
+-----
+Test: test/test_buy_product.py::Test1::test_buy_product (call)
+Start time: 2022-11-28 22:27:56.461117
+Start name method: user_authorization
+
+End time: 2022-11-28 22:28:09.067146
+End name method: user_authorization
+URL: https://www.dns-shop.ru/checkout/
+
+-----
