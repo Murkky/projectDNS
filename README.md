@@ -1,4 +1,5 @@
 # projectDNS
-pip install pytest
-pip install selenium-page-factory
-pip install webdriver-manager
+## To import libraries / project dependencies:
+- pip install pytest
+- pip install selenium-page-factory
+- pip install webdriver-manager
