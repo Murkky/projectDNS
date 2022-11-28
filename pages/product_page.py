@@ -1,5 +1,7 @@
+import allure
 from seleniumpagefactory.Pagefactory import PageFactory
 from pages.base_methods import Base
+from utilities.logger import Logger
 
 
 class ProductPage(PageFactory, Base):
@@ -31,8 +33,11 @@ class ProductPage(PageFactory, Base):
         return self.cart_word.get_text()
 
     def buy_product(self):
-        self.click_add_to_cart()
-        self.hover_cart_icon()
-        self.click_to_cart()
-        self.assert_word(self.get_cart_word_text(), 'Корзина')
+        with allure.step('Buy Product'):
+            Logger.add_start_step(method='buy_product')
+            self.click_add_to_cart()
+            self.hover_cart_icon()
+            self.click_to_cart()
+            self.assert_word(self.get_cart_word_text(), 'Корзина')
+            Logger.add_end_step(url=self.driver.current_url, method='buy_product')
 

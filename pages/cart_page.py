@@ -1,4 +1,7 @@
+import allure
 from seleniumpagefactory.Pagefactory import PageFactory
+
+from utilities.logger import Logger
 
 
 class CartPage(PageFactory):
@@ -16,5 +19,8 @@ class CartPage(PageFactory):
         print("Click Checkout Button")
 
     def checkout(self):
-        self.click_navigate_to_checkout_button()
+        with allure.step('Checkout'):
+            Logger.add_start_step(method='checkout')
+            self.click_navigate_to_checkout_button()
+            Logger.add_end_step(url=self.driver.current_url, method='checkout')
 

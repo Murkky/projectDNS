@@ -1,6 +1,8 @@
 import time
+import allure
 from seleniumpagefactory.Pagefactory import PageFactory
 from pages.base_methods import Base
+from utilities.logger import Logger
 
 
 class CheckoutPage(PageFactory, Base):
@@ -37,7 +39,10 @@ class CheckoutPage(PageFactory, Base):
         return self.logged_in_tick.is_displayed()
 
     def user_authorization(self):
-        self.click_authorization_button()
-        self.click_login_with_password()
-        self.set_authorization()
-        self.screenshot()
+        with allure.step('User Authorization'):
+            Logger.add_start_step(method='user_authorization')
+            self.click_authorization_button()
+            self.click_login_with_password()
+            self.set_authorization()
+            self.screenshot()
+            Logger.add_end_step(url=self.driver.current_url, method='user_authorization')

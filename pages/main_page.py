@@ -5,7 +5,9 @@
 # from selenium.webdriver.support import expected_conditions as EC
 # from selenium.webdriver import ActionChains
 # from src.pages.base_methods import Base
+import allure
 from seleniumpagefactory.Pagefactory import PageFactory
+from utilities.logger import Logger
 
 
 class MainPage(PageFactory):
@@ -33,9 +35,12 @@ class MainPage(PageFactory):
         print("Click Drop Category")
 
     def select_category(self):
-        self.hover_main_category()
-        self.hover_drop_category_1()
-        self.click_drop_category_2()
+        with allure.step('Select Category'):
+            Logger.add_start_step(method='select_category')
+            self.hover_main_category()
+            self.hover_drop_category_1()
+            self.click_drop_category_2()
+            Logger.add_end_step(url=self.driver.current_url, method='select_category')
 
     # locators
     # main_category = '//a[@href="/catalog/17a890dc16404e77/smartfony-i-fototexnika/"]'

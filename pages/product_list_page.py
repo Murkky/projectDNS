@@ -1,6 +1,8 @@
 import time
+import allure
 from seleniumpagefactory.Pagefactory import PageFactory
 from pages.base_methods import Base
+from utilities.logger import Logger
 
 
 class ProductListPage(PageFactory, Base):
@@ -34,9 +36,12 @@ class ProductListPage(PageFactory, Base):
         self.select_product.click_button()
 
     def selected_product(self):
-        self.assert_url('https://www.dns-shop.ru/catalog/17a8a26516404e77/kabeli-dlya-mobilnyx-ustrojstv/')
-        self.driver.execute_script("window.scroll(0,500)")
-        self.click_filters()
-        self.driver.execute_script("window.scroll(0,0)")
-        self.click_sort_products()
-        self.click_name_product()
+        with allure.step('Selected Product'):
+            Logger.add_start_step(method='selected_product')
+            self.assert_url('https://www.dns-shop.ru/catalog/17a8a26516404e77/kabeli-dlya-mobilnyx-ustrojstv/')
+            self.driver.execute_script("window.scroll(0,500)")
+            self.click_filters()
+            self.driver.execute_script("window.scroll(0,0)")
+            self.click_sort_products()
+            self.click_name_product()
+            Logger.add_end_step(url=self.driver.current_url, method='selected_product')

@@ -1,4 +1,5 @@
 import pytest
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -11,6 +12,7 @@ from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
 
 
+@allure.description('Test Buy Product')
 @pytest.fixture(scope="class")
 def chrome_driver_init(request):
     options = Options()
@@ -28,8 +30,8 @@ class BasicTest:
     pass
 
 
-class TestURL(BasicTest):
-    def test_open_url(self):
+class Test1(BasicTest):
+    def test_buy_product(self):
         mp = MainPage(self.driver)
         plp = ProductListPage(self.driver)
         pp = ProductPage(self.driver)
